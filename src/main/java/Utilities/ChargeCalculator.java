@@ -16,6 +16,7 @@ import java.util.Vector;
 import java.util.Scanner;
 import javafx.application.Application;
 
+//Author Peyton Kunselman
 
 public class ChargeCalculator {
 
