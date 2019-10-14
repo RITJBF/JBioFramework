@@ -51,6 +51,8 @@ Thanks:
 - Sheneka Linton
 - Benjamin Russell ([benrr101](https://github.com/benrr101))
 - Amanda Fisher
+- Joshua Pouliot
+- Peyton Kunselman
 - ChemAxon for providing MarvinSketch Java API.
 
 

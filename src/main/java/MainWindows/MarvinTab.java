@@ -79,7 +79,7 @@ public class MarvinTab extends JPanel {
     private MSketchPane createSketchPane() {
 
         MSketchPane pane = new MSketchPane(createUserSettings());
-        pane.setPreferredSize(new Dimension(900, 500));
+        pane.setPreferredSize(new Dimension(1920, 1080));
 
         return pane;
     }

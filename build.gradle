@@ -12,7 +12,11 @@ repositories {
         dirs 'libraries'
     }
     maven {
-        url "https://plugins.gradle.org/m2/"
+        url https://hub.chemaxon.com/artifactory
+        credentials {
+            username = pdk1750@rit.edu
+            password = AKCp5Zk9Ts3jqYHerpsqUpdsVsTM6dcf4JM5FNApA7zBd8K1objBHRgZRvTTTk2rPeF1PMYH6
+        }
     }
     mavenCentral()
 }
@@ -44,6 +48,8 @@ dependencies {
     //compile 'com.sun.media:jai_codec:1.0'
     //compile 'com.sun.media:jai_core:1.0'
     //compile ''
+    compile group: 'com.chemaxon', name: 'marvin-app', version: '17.+'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
 task wrapper(type: Wrapper) {

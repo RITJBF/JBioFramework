@@ -34,6 +34,7 @@ package main.java.MassSpec;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.io.*;
 
@@ -49,6 +50,7 @@ public class Ion extends ArrayList<SpecAminoAcid> {
     private int xCoordinate = 0;
     private String sequence;
     Color color = Color.BLACK;
+    private String reverseSequence;
 
     /**
      * Adds the MassSpec.SpecAminoAcid to the end of the MassSpec.Ion. MassSpec.Ion adds its mass to
@@ -89,9 +91,9 @@ public class Ion extends ArrayList<SpecAminoAcid> {
 		proteinSet.append(
 	       "Instructions: " +
 	       "\n" +
-	       "\n To display the structure properly, go to Edit> Transformation > Flip> Flip Horizontally.\n \n" +
+	       "\n To display the structure properly, right click and select Ungroup.\n \n" +
 	       "Note: The longer the sequence the more likely it is to display diagonally,"+
-	       "\n simply select all the atoms in the structure and move it where you would like it to be."
+	       "\n Select everything. Click on Structure and select Clean 2D. \n"
 	       
 	    );
         panel.add(proteinSet, BorderLayout.CENTER);
@@ -101,7 +103,7 @@ public class Ion extends ArrayList<SpecAminoAcid> {
         marvinButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MarvinTab.getSketchPane().setMol(AminoAcidTranslator.translate(sequence));
+                MarvinTab.getSketchPane().setMol(sequence);
                 JBioFrameworkMain.getTabs().setSelectedIndex(4);
                 frame.dispose();
             }
@@ -136,12 +138,19 @@ public class Ion extends ArrayList<SpecAminoAcid> {
     public void setSequence(String sequence) {
 
         this.sequence = sequence;
+	    
+	this.reverseSequence = new StringBuilder(sequence).reverse().toString();
     }
 
-    // Gets the Sequence to be used in the Translator
+    // Gets the sequence to be used in the Translator
     public String getSequence() {
 
         return sequence;
+    }
+    // Gets the reverseSequence to be used in the Translator
+    public String getReverseSequence() {
+
+        return reverseSequence;
     }
 
     /**

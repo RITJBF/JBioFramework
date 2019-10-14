@@ -29,6 +29,13 @@ public class AminoAcidTranslator {
                         outpt += "Alanyl-";
                     }
                     break;
+                case 'P':
+                    if (i == inpt.length() - 1) {
+                        outpt += "Proline";
+                    } else {
+                        outpt += "Prolyl-";
+                    }
+                    break;
                 case 'G':
                     if (i == inpt.length() - 1) {
                         outpt += "Glycine";
